@@ -65,20 +65,20 @@ basic.forever(on_forever)
 이 코드의 중요한 부분을 설명해 드릴게요:
 
 1. **초기 설정**:
-   - `basic.show_icon(IconNames.SMALL_HEART)`: 작은 하트 아이콘을 표시해요.
-   - `servos.P1.set_pulse(2500)`, `servos.P2.set_pulse(2500)`: 서보모터의 펄스 폭을 설정해요.
-   - `servos.P1.set_angle(90)`, `servos.P2.set_angle(95)`: 서보모터의 초기 각도를 설정해요.
+   - `작은 하트 아이콘 출력`: 작은 하트 아이콘을 표시해요.
+   - `서보 P1, P2 의 펄스를 2500(us)로 설정 `: 서보모터의 펄스 폭을 설정해요.
+   - `서보 P1, P2 의 초기 각도를 90(도)로 설정`: 서보모터의 초기 각도를 설정해요.
 
 2. **소리 감지 이벤트**:
-   - `input.on_sound(DetectedSound.LOUD, on_sound_loud)`: 큰 소리(박수)가 감지되면 `on_sound_loud` 함수를 실행해요.
+   - `큰 소리가 들릴 때 `: 큰 소리(박수)가 감지되면 안에 응원 동작을 실행해요.
 
 3. **응원 동작**:
-   - `servo1_angles = [0, 45, 45, 90]`, `servo2_angles = [150, 150, 120, 90]`: 서보모터가 움직일 각도들을 배열로 저장해요.
-   - `for index in range(2)`: 동작을 2번 반복해요.
-   - `basic.show_icon(IconNames.HEART)`: 큰 하트 아이콘을 표시해요.
-   - `while i <= len(servo1_angles) - 1`: 저장된 모든 각도를 차례대로 실행해요.
-   - `servos.P1.set_angle(servo1_angles[i])`, `servos.P2.set_angle(servo2_angles[i])`: 두 서보모터를 동시에 지정된 각도로 움직여요.
-   - `basic.pause(200)`: 0.2초 동안 기다려요.
+   - `servo1_angles 에 [0, 45, 45, 90] 저장`, `servo2_angles 에 [150, 150, 120, 90] 저장`: 서보모터가 움직일 각도들을 배열로 저장해요.
+   - `실행 2번 반복`: 동작을 2번 반복해요.
+   - `큰 하트 아이콘 출력`: 큰 하트 아이콘을 표시해요.
+   - `서보의 각도를 (도)로 설정 `: 저장된 모든 각도를 차례대로 실행해요.
+   - `servo1_angles[i], servo2_angles[i]`: 두 서보모터를 동시에 지정된 각도로 움직여요.
+   - `일시중지 200(ms)`: 0.2초 동안 기다려요.
 
 ## 코드 업로드하는 방법
 
