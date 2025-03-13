@@ -14,14 +14,7 @@ input.onSound(DetectedSound.Loud, function () {
     ]
     for (let index = 0; index < 2; index++) {
         basic.clearScreen()
-        // 초기 화면 설정
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # . . . #
-            # # # # #
-            # # # # #
-            `)
+        basic.showIcon(IconNames.Heart)
         for (let i = 0; i <= servo1_angles.length - 1; i++) {
             // 두 서보 동시 설정
             servos.P1.setAngle(servo1_angles[i])
@@ -31,25 +24,12 @@ input.onSound(DetectedSound.Loud, function () {
         }
     }
 })
-input.onButtonPressed(Button.A, function () {
-	
-})
 let servo2_angles: number[] = []
 let servo1_angles: number[] = []
-// 초기 화면 설정
-basic.showLeds(`
-    . . . . .
-    . . . . .
-    # # # # #
-    . . . . .
-    . . . . .
-    `)
+basic.showIcon(IconNames.SmallHeart)
 // 서보 초기 설정
 servos.P1.setPulse(2500)
 servos.P2.setPulse(2500)
 // 초기 각도 설정
 servos.P2.setAngle(95)
 servos.P1.setAngle(90)
-basic.forever(function () {
-	
-})
